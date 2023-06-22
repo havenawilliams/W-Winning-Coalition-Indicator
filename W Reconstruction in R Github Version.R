@@ -9,3 +9,6 @@ vdemdf <- vdem %>%
            (sd(v2elembaut, na.rm = TRUE)) + sd(v2psoppaut, na.rm = TRUE) + sd(v2psoppaut, na.rm = TRUE) + sd(three_max, na.rm = TRUE)) %>%
   mutate(W = (W_raw - min(W_raw, na.rm = TRUE)) / (max(W_raw, na.rm = TRUE) - min(W_raw, na.rm = TRUE))) %>%
   mutate(merge_key = paste0(country_text_id, '_', year))
+
+#Alternatively, saving just the W variable and the merge key
+vdemdf_slim <- vdemdf %>% select(W, merge_key)
